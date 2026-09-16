@@ -27,6 +27,18 @@ document.addEventListener("DOMContentLoaded", () => {
   const yearEl = document.querySelector("[data-year]");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+  // Hero background video: respect reduced-motion, and quietly drop it if the
+  // source 404s (no footage uploaded yet) so the gradient fallback stays clean.
+  const heroVideo = document.querySelector(".hero-video");
+  if (heroVideo) {
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (prefersReducedMotion) {
+      heroVideo.pause();
+      heroVideo.removeAttribute("autoplay");
+    }
+    heroVideo.addEventListener("error", () => heroVideo.remove());
+  }
+
   const revealEls = document.querySelectorAll(".reveal");
   if ("IntersectionObserver" in window && revealEls.length) {
     document.documentElement.classList.add("js-reveal");
