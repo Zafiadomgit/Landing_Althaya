@@ -489,12 +489,13 @@ p {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--gold);
-  margin-top: 18px;
+  text-align: right;
+  margin-top: auto;
   margin-bottom: 0;
 }
 
 .service-card .btn--small {
-  margin-top: auto;
+  margin-top: 10px;
 }
 
 /* Pricing */
