@@ -136,7 +136,7 @@ p {
   justify-content: center;
   gap: 10px;
   padding: 15px 34px;
-  border-radius: var(--radius);
+  border-radius: 999px;
   font-family: "Forum", serif;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -145,6 +145,14 @@ p {
   cursor: pointer;
   transition: all 0.25s ease;
   white-space: nowrap;
+}
+
+.btn--small {
+  padding: 10px 24px;
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  align-self: flex-start;
+  margin-top: 8px;
 }
 
 .btn--primary {
@@ -379,8 +387,9 @@ p {
 .hero-subtitle {
   font-family: "Forum", serif;
   font-size: 1.05rem;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.02em;
   color: var(--forest);
+  max-width: 480px;
   margin-bottom: 34px;
 }
 
@@ -465,7 +474,6 @@ p {
 .service-card p {
   color: var(--forest);
   font-size: 0.96rem;
-  flex-grow: 1;
 }
 
 .service-card .line {
@@ -473,6 +481,10 @@ p {
   font-style: italic;
   color: var(--forest);
   margin-top: 6px;
+}
+
+.service-card .btn--small {
+  margin-top: auto;
 }
 
 /* Pricing */
@@ -705,8 +717,19 @@ p {
 .contact-card-logo {
   max-width: 260px;
   width: 100%;
-  margin: 0 auto 28px;
-  border-radius: var(--radius);
+  margin: 0 auto 32px;
+}
+
+.contact-card-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.contact-card-actions .btn {
+  width: 100%;
+  max-width: 280px;
 }
 
 .contact-card p {
