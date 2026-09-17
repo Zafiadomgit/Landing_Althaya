@@ -483,6 +483,16 @@ p {
   margin-top: 6px;
 }
 
+.service-card .price {
+  font-family: "Forum", serif;
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-top: 18px;
+  margin-bottom: 0;
+}
+
 .service-card .btn--small {
   margin-top: auto;
 }
