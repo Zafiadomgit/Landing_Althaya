@@ -229,6 +229,11 @@ p {
   gap: 12px;
 }
 
+.brand-logo {
+  height: 52px;
+  width: auto;
+}
+
 .brand-mark {
   width: 46px;
   height: 46px;
