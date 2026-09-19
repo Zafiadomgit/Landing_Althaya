@@ -206,12 +206,12 @@ p {
   right: 0;
   z-index: 100;
   padding: 20px 0;
-  background: rgba(250, 247, 242, 0.94);
-  backdrop-filter: blur(10px);
-  transition: padding 0.3s ease, box-shadow 0.3s ease;
+  transition: background 0.3s ease, padding 0.3s ease, box-shadow 0.3s ease;
 }
 
 .site-header.is-scrolled {
+  background: rgba(250, 247, 242, 0.94);
+  backdrop-filter: blur(10px);
   padding: 12px 0;
   box-shadow: 0 8px 30px -20px rgba(44, 50, 45, 0.4);
 }
@@ -353,28 +353,34 @@ p {
   z-index: 0;
 }
 
+.hero-scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    100deg,
+    rgba(250, 247, 242, 0.95) 0%,
+    rgba(250, 247, 242, 0.86) 34%,
+    rgba(250, 247, 242, 0.4) 60%,
+    rgba(250, 247, 242, 0.05) 82%
+  );
+}
+
 @media (prefers-reduced-motion: reduce) {
   .hero-video {
     display: none;
   }
 }
 
-/* Softly fades the video's top-left corner into the page tone, hiding a
-   stray blue object from the source footage without a hard crop line. */
-.hero-video-mask {
+.hero-spiral {
   position: absolute;
-  top: 90px;
-  left: 0;
-  width: min(13vw, 170px);
-  height: min(34vh, 360px);
-  z-index: 1;
+  right: 4%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: min(38vw, 460px);
+  opacity: 0.4;
   pointer-events: none;
-  background: radial-gradient(
-    ellipse at left,
-    var(--ivory) 0%,
-    rgba(250, 247, 242, 0.8) 40%,
-    rgba(250, 247, 242, 0) 75%
-  );
+  z-index: 1;
 }
 
 .hero-content {
