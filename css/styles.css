@@ -353,34 +353,10 @@ p {
   z-index: 0;
 }
 
-.hero-scrim {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background: linear-gradient(
-    100deg,
-    rgba(250, 247, 242, 0.95) 0%,
-    rgba(250, 247, 242, 0.86) 34%,
-    rgba(250, 247, 242, 0.4) 60%,
-    rgba(250, 247, 242, 0.05) 82%
-  );
-}
-
 @media (prefers-reduced-motion: reduce) {
   .hero-video {
     display: none;
   }
-}
-
-.hero-spiral {
-  position: absolute;
-  right: 4%;
-  top: 50%;
-  transform: translateY(-50%);
-  width: min(38vw, 460px);
-  opacity: 0.4;
-  pointer-events: none;
-  z-index: 1;
 }
 
 .hero-content {
