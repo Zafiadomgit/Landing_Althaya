@@ -372,17 +372,6 @@ p {
   }
 }
 
-.hero-spiral {
-  position: absolute;
-  right: 4%;
-  top: 50%;
-  transform: translateY(-50%);
-  width: min(38vw, 460px);
-  opacity: 0.4;
-  pointer-events: none;
-  z-index: 1;
-}
-
 .hero-content {
   position: relative;
   z-index: 2;
