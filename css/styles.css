@@ -206,12 +206,12 @@ p {
   right: 0;
   z-index: 100;
   padding: 20px 0;
-  transition: background 0.3s ease, padding 0.3s ease, box-shadow 0.3s ease;
+  background: rgba(250, 247, 242, 0.94);
+  backdrop-filter: blur(10px);
+  transition: padding 0.3s ease, box-shadow 0.3s ease;
 }
 
 .site-header.is-scrolled {
-  background: rgba(250, 247, 242, 0.94);
-  backdrop-filter: blur(10px);
   padding: 12px 0;
   box-shadow: 0 8px 30px -20px rgba(44, 50, 45, 0.4);
 }
