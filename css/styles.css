@@ -395,15 +395,18 @@ p {
 }
 
 /* About */
-.about-grid {
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 64px;
-  align-items: center;
+.about-copy-wrap {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
 }
 
-.about-copy p {
+.about-copy-wrap p {
   color: var(--forest);
+}
+
+.about-copy-wrap .eyebrow {
+  text-align: center;
 }
 
 .about-quote {
@@ -411,32 +414,57 @@ p {
   font-style: italic;
   font-size: 1.35rem;
   color: var(--forest);
-  border-left: 2px solid var(--gold);
-  padding-left: 22px;
-  margin: 30px 0;
+  border-top: 1px solid rgba(184, 155, 114, 0.4);
+  padding-top: 26px;
+  margin: 30px auto 0;
+  max-width: 560px;
 }
 
-.note-card {
-  background: var(--white);
-  border: 1px solid rgba(184, 155, 114, 0.4);
+/* Meet Laura */
+.laura-grid {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 64px;
+  align-items: start;
+}
+
+.laura-photo-placeholder {
+  aspect-ratio: 4/5;
   border-radius: var(--radius);
-  padding: 30px 32px;
-  box-shadow: var(--shadow-soft);
+  background: radial-gradient(circle at 50% 45%, var(--forest) 0%, var(--forest-deep) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: sticky;
+  top: 130px;
 }
 
-.note-card h3 {
-  font-family: "Forum", serif;
-  font-size: 0.9rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 12px;
+.laura-photo-placeholder .brand-mark {
+  width: 96px;
+  height: 96px;
+  opacity: 0.9;
 }
 
-.note-card p {
+.laura-copy p {
   color: var(--forest);
-  font-size: 0.95rem;
-  margin: 0;
+}
+
+.laura-copy h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+  font-weight: 600;
+  font-size: 1.3rem;
+  letter-spacing: 0.02em;
+  margin-bottom: 26px;
+}
+
+.laura-closing {
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+  font-size: 1.2rem;
+  border-top: 1px solid rgba(184, 155, 114, 0.4);
+  padding-top: 24px;
+  margin-top: 30px;
 }
 
 /* Services */
@@ -475,6 +503,13 @@ p {
   font-style: italic;
   color: var(--forest);
   margin-top: 6px;
+}
+
+.service-card .highlights {
+  font-weight: 600;
+  color: var(--forest);
+  font-size: 0.88rem;
+  margin-top: 4px;
 }
 
 .service-card .price {
@@ -835,7 +870,17 @@ html.js-reveal .reveal.is-visible {
 
 /* Responsive */
 @media (max-width: 980px) {
-  .about-grid,
+  .laura-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .laura-photo-placeholder {
+    position: static;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
   .contact-grid {
     grid-template-columns: 1fr;
     gap: 40px;
