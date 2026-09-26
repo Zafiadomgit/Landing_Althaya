@@ -206,12 +206,12 @@ p {
   right: 0;
   z-index: 100;
   padding: 20px 0;
-  transition: background 0.3s ease, padding 0.3s ease, box-shadow 0.3s ease;
+  background: rgba(250, 247, 242, 0.94);
+  backdrop-filter: blur(10px);
+  transition: padding 0.3s ease, box-shadow 0.3s ease;
 }
 
 .site-header.is-scrolled {
-  background: rgba(250, 247, 242, 0.94);
-  backdrop-filter: blur(10px);
   padding: 12px 0;
   box-shadow: 0 8px 30px -20px rgba(44, 50, 45, 0.4);
 }
@@ -509,7 +509,17 @@ p {
   font-weight: 600;
   color: var(--forest);
   font-size: 0.88rem;
-  margin-top: 4px;
+  margin-top: auto;
+  padding-top: 16px;
+}
+
+.price-tiers {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-height: 3.2em;
+  justify-content: center;
+  margin-top: 10px;
 }
 
 .service-card .price {
@@ -519,8 +529,7 @@ p {
   text-transform: uppercase;
   color: var(--gold);
   text-align: right;
-  margin-top: auto;
-  margin-bottom: 0;
+  margin: 0;
 }
 
 .service-card .btn--small {
@@ -611,24 +620,6 @@ p {
 
 .gallery-tile:hover img {
   transform: scale(1.05);
-}
-
-.gallery-tile::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(44, 50, 45, 0.7) 0%, rgba(44, 50, 45, 0.15) 45%, transparent 70%);
-}
-
-.gallery-tile figcaption {
-  position: absolute;
-  left: 20px;
-  right: 20px;
-  bottom: 20px;
-  font-family: "Forum", serif;
-  font-size: 0.82rem;
-  letter-spacing: 0.06em;
-  color: var(--ivory);
 }
 
 .gallery-note {
