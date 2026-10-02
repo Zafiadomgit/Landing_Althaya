@@ -428,21 +428,26 @@ p {
   align-items: start;
 }
 
-.laura-photo-placeholder {
+.laura-portrait {
   aspect-ratio: 4/5;
   border-radius: var(--radius);
-  background: radial-gradient(circle at 50% 45%, var(--forest) 0%, var(--forest-deep) 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  box-shadow: var(--shadow-soft);
   position: sticky;
   top: 130px;
-}
-
-.laura-photo-placeholder .brand-mark {
-  width: 96px;
-  height: 96px;
-  opacity: 0.9;
+  background-image: url("../assets/laura/laura-portrait.jpg");
+  background-image: image-set(
+    url("../assets/laura/laura-portrait.webp") type("image/webp"),
+    url("../assets/laura/laura-portrait.jpg") type("image/jpeg")
+  );
+  background-size: cover;
+  background-position: center 20%;
+  /* Deters casual right-click / drag / long-press saving. Not real
+     protection: anyone with devtools or a screenshot can still get the
+     image — there's no way to fully block that on a public web page. */
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-touch-callout: none;
 }
 
 .laura-copy p {
@@ -866,7 +871,7 @@ html.js-reveal .reveal.is-visible {
     gap: 32px;
   }
 
-  .laura-photo-placeholder {
+  .laura-portrait {
     position: static;
     max-width: 320px;
     margin: 0 auto;
