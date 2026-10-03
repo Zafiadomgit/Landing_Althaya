@@ -39,6 +39,60 @@ document.addEventListener("DOMContentLoaded", () => {
     heroVideo.addEventListener("error", () => heroVideo.remove());
   }
 
+  // Women-only booking notice: shown the first time someone clicks through
+  // to the Zanda booking portal in this browser tab, then skipped for the
+  // rest of the session once they've seen and continued past it.
+  const notice = document.getElementById("bookingNotice");
+  const bookingLinks = document.querySelectorAll('a[href*="zandahealth.com"]');
+  if (notice && bookingLinks.length) {
+    const continueLink = document.getElementById("bookingNoticeContinue");
+    let pendingHref = null;
+    let lastFocused = null;
+
+    const openNotice = (href) => {
+      pendingHref = href;
+      lastFocused = document.activeElement;
+      notice.hidden = false;
+      document.body.classList.add("notice-open");
+      continueLink.focus();
+    };
+
+    const closeNotice = () => {
+      notice.hidden = true;
+      document.body.classList.remove("notice-open");
+      pendingHref = null;
+      if (lastFocused && typeof lastFocused.focus === "function") lastFocused.focus();
+    };
+
+    bookingLinks.forEach((link) => {
+      link.addEventListener("click", (event) => {
+        try {
+          if (sessionStorage.getItem("althaya-booking-notice-seen") === "1") return;
+        } catch (e) {}
+        event.preventDefault();
+        openNotice(link.href);
+      });
+    });
+
+    continueLink.addEventListener("click", () => {
+      try {
+        sessionStorage.setItem("althaya-booking-notice-seen", "1");
+      } catch (e) {}
+      if (pendingHref) continueLink.href = pendingHref;
+      notice.hidden = true;
+      document.body.classList.remove("notice-open");
+      pendingHref = null;
+    });
+
+    notice.querySelectorAll("[data-notice-dismiss]").forEach((el) => {
+      el.addEventListener("click", closeNotice);
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && !notice.hidden) closeNotice();
+    });
+  }
+
   const revealEls = document.querySelectorAll(".reveal");
   if ("IntersectionObserver" in window && revealEls.length) {
     document.documentElement.classList.add("js-reveal");

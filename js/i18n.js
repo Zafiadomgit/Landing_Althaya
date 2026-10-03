@@ -103,7 +103,14 @@ const STRINGS = {
     "footer.tagline": "Pause · Release · Restore",
     "footer.rights": "All rights reserved.",
     "footer.note": "Bookings & payments securely managed via Zanda.",
-    "whatsapp.msg": "Hi Laura, I'd like to enquire about a massage experience with ALTHAYA."
+    "whatsapp.msg": "Hi Laura, I'd like to enquire about a massage experience with ALTHAYA.",
+    "notice.eyebrow": "Before you book",
+    "notice.title": "A space created for women",
+    "notice.body": "ALTHAYA is currently a women-only massage practice.",
+    "notice.note": "Male clients are currently welcomed by referral from an existing client.",
+    "notice.thanks": "Thank you for your understanding.",
+    "notice.continue": "Continue to Booking",
+    "notice.cancel": "Not now"
   },
   es: {
     "nav.treatments": "Tratamientos",
@@ -209,7 +216,14 @@ const STRINGS = {
     "footer.tagline": "Pause · Release · Restore",
     "footer.rights": "Todos los derechos reservados.",
     "footer.note": "Reservas y pagos gestionados de forma segura a través de Zanda.",
-    "whatsapp.msg": "Hola Laura, me gustaría preguntar sobre una experiencia de masaje con ALTHAYA."
+    "whatsapp.msg": "Hola Laura, me gustaría preguntar sobre una experiencia de masaje con ALTHAYA.",
+    "notice.eyebrow": "Antes de reservar",
+    "notice.title": "Un espacio creado para mujeres",
+    "notice.body": "ALTHAYA es, por el momento, una consulta de masajes exclusiva para mujeres.",
+    "notice.note": "Por el momento, los clientes hombres son bienvenidos por recomendación de una clienta existente.",
+    "notice.thanks": "Gracias por tu comprensión.",
+    "notice.continue": "Continuar a la Reserva",
+    "notice.cancel": "Ahora no"
   }
 };
 
