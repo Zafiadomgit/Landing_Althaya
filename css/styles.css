@@ -3,6 +3,10 @@
 :root {
   --forest: #445046;
   --forest-deep: #333c37;
+  /* Same forest green with the faint ivory tint the Contact card already
+     uses (rgba(250,247,242,0.06) over --forest) — a lighter shade from
+     the existing palette, not a new color. */
+  --forest-light: #4f5a50;
   --nude: #edd6ca;
   --ivory: #faf7f2;
   --gold: #b89b72;
@@ -106,6 +110,12 @@ p {
   color: var(--nude);
 }
 
+/* Same text treatment as .section--forest, lighter background so this
+   section reads as distinct from Contact further down the page. */
+.section--forest-light {
+  background: var(--forest-light);
+}
+
 .section--forest h2,
 .section--forest h3 {
   color: var(--white);
@@ -207,8 +217,7 @@ p {
   right: 0;
   z-index: 100;
   padding: 20px 0;
-  background: rgba(250, 247, 242, 0.94);
-  backdrop-filter: blur(10px);
+  background: var(--forest);
   transition: padding 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -270,7 +279,7 @@ p {
   font-size: 0.82rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--forest);
+  color: var(--nude);
   position: relative;
 }
 
@@ -297,7 +306,7 @@ p {
 
 .lang-switch {
   display: flex;
-  border: 1px solid var(--forest);
+  border: 1px solid var(--nude);
   border-radius: 20px;
   overflow: hidden;
 }
@@ -309,13 +318,13 @@ p {
   font-family: "Forum", serif;
   font-size: 0.72rem;
   letter-spacing: 0.08em;
-  color: var(--forest);
+  color: var(--nude);
   cursor: pointer;
 }
 
 .lang-switch button.is-active {
-  background: var(--forest);
-  color: var(--white);
+  background: var(--nude);
+  color: var(--forest);
 }
 
 .nav-toggle {
@@ -331,7 +340,19 @@ p {
 .nav-toggle span {
   width: 24px;
   height: 1px;
-  background: var(--forest);
+  background: var(--nude);
+}
+
+.site-header .btn--primary {
+  background: var(--nude);
+  color: var(--forest);
+  border-color: var(--nude);
+}
+
+.site-header .btn--primary:hover {
+  background: var(--gold);
+  color: var(--white);
+  border-color: var(--gold);
 }
 
 /* Hero */
@@ -1055,6 +1076,7 @@ html.js-reveal .reveal.is-visible {
 
   .site-nav a {
     font-size: 1rem;
+    color: var(--forest);
   }
 
   .nav-toggle {
