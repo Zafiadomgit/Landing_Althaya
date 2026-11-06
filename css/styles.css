@@ -848,6 +848,30 @@ p {
   opacity: 0.65;
 }
 
+.footer-credit {
+  display: flex;
+  justify-content: center;
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(237, 214, 202, 0.14);
+}
+.lumen-credit {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.74rem;
+  letter-spacing: 0.04em;
+  color: var(--nude);
+  opacity: 0.6;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+.lumen-credit strong { font-weight: 500; }
+.lumen-credit:hover,
+.lumen-credit:focus-visible { opacity: 1; }
+.lumen-credit-mark { flex: none; transition: transform 0.3s ease; }
+.lumen-credit:hover .lumen-credit-mark { transform: rotate(-8deg) scale(1.08); }
+
 /* Floating WhatsApp */
 .whatsapp-float {
   position: fixed;
@@ -1115,4 +1139,5 @@ html.js-reveal .reveal.is-visible {
     flex-direction: column;
     align-items: flex-start;
   }
+  .footer-credit { justify-content: flex-start; }
 }
